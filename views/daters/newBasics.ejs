@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/styleNew.css" />
+
+        
+         
+
+</head>
+<body>
+    <h1>The Basics...</h1>
+    <form class="form" action="/daters/new/Basics" method="POST">
+
+        <div class = "custom-select">
+          
+        <label>Gender: </label>
+        <select name="gender" class = "inputs" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select> <br><br>
+        </div>
+       
+  
+        <label>Interested in (Check All That Apply):</label><br><br>
+  
+        <input type="checkbox" id = "Men" class ="checks" name="interestedIn" value="Men">
+        <label for="Men"> Men</label><br><br>
+        <input type="checkbox" id = "Women" class ="checks" name="interestedIn" value="Women">
+        <label for="Women"> Women</label><br><br>
+        <input type="checkbox" id = "Other" class ="checks" name="interestedIn" value="Other">
+        <label for="Other"> Other</label><br><br>
+
+        <label>Age:</label><br>
+        
+        <input  required type="text" name="age" class = "inputs" ><br>
+        <br><br><br>
+
+        <label>Location:</label><br><br>
+        <input type="radio" id = "DT Los Angeles" class ="checks" name="location" value="DT Los Angeles">
+        <label for="Men">DT Los Angeles</label><br><br>
+        <input type="radio" id = "Denver" class ="checks" name="location" value="Denver">
+        <label for="Women"> Denver</label><br><br>
+        <input type="radio" id = "Santa Monica" class ="checks" name="location" value="Santa Monica">
+        <label for="Other"> Santa Monica</label><br><br>
+
+
+        <label>Please enter URL to your desired profile image!:</label><br><br>
+        <input type="text" name="profileURL" class = "inputs" ><br><br><br>
+
+        <button class = "butt" type ="submit" >Submit and Continue!</button>
+        <br><br><br>
+      </form>
+
+
+
+
+      
+</body>
+</html>

@@ -1,0 +1,75 @@
+#lightning,#continue{
+    position: absolute;
+    left: 15%;
+}
+
+a{
+    font-size: 25px;
+    color: rgb(39, 20, 126)
+}
+#continue{
+    display:flex;
+    flex-direction: left;
+}
+
+a:hover{
+    font-size: 28px;
+
+}
+
+.scaleAxes{
+    display:flex;
+    flex-direction: left;
+}
+#time{
+    margin-bottom: 40px;
+}
+#extroverted{
+    position: absolute;
+    right: 40%
+}
+.questionHeader{
+    margin-bottom: 7px;
+    margin-top: 12px;
+}
+body{
+    background-color: rgb(236, 139, 139);
+}
+
+#farmAnimal{
+    position: absolute;
+    right: 40%
+}
+
+.left{
+    display:flex;
+    flex-direction:left;
+}
+
+#centerMe{
+    position: absolute;
+    left: 35%;
+    text-align: center;
+}
+
+img{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.butt{
+    background-color: rgb(219, 63, 63);
+    border-radius: 4px;
+    margin-right: 0.6em;
+    font-size: 25px;
+    border: 1px solid black;
+
+}
+.butt:hover{
+    font-size:26px;
+    border: 2px solid black;
+}
+.butt:active{
+    font-size:27px;
+    border: 1px solid black;
+}
