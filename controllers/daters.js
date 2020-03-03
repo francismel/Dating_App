@@ -12,6 +12,7 @@ module.exports = {
   basics,
   postComment,
   home,
+  deleteComment,
 };
 
 
@@ -62,13 +63,26 @@ function postComment(req,res,next){
     });
 
   });
-  
-
-  
-
-  
-
 }
+
+function deleteComment(req,res,next){
+
+
+  console.log("this is the comment id 2 delete ",req.params.id);
+  console.log("this is the id of the current user ",req.user.id);
+  Dater.findById(req.user._id,function(error,currUser){
+    currUser.comments.pull({_id: req.params.id});
+    currUser.save();
+    console.log(" i think i just deleted comment ",req.params.id);
+    console.log("from person ",req.user.id);
+    res.redirect('/daters/home');
+  });
+};
+
+
+    
+
+  
 
 function create(req,res,next){
 

@@ -16,12 +16,12 @@
         <a href="#news">My Top Matches</a>
         <a href="#contact">All Members</a>
         <a href="#about">Messages</a>
-        <!-- <div class="search-container">
-            <form>
-              <input id = "searchBar" type="text" placeholder="Search.." name="search">
+        <div class="search-container">
+            <form id = "searchForm">
+              <input id = "searchBar" type="text" size = "30" height="30"placeholder="Search By Name.." name="search">
               <button id = "searchButton" type="submit"></button>
             </form>
-        </div> -->
+        </div>
         <a id = "logout" class="active" href="#home">Logout</a>
         </div>
         
@@ -70,10 +70,15 @@
         <div id = "commentSection">
             <h2 id = "saying">What People are Saying</h2>
             <div id = "postedComments">
+
+                
                 <%currUser.comments.forEach(com => {%>
+
+
                 <div class = "indComment">
-                <p class ="commentText"><%=com.date.toLocaleString()%></p>
-                <p class ="commentText"><%=com.from%> said: <%=com.content%></p><br>
+                <form id = "deleteComment" action = '/daters/comment/delete/<%=com._id%>' method="GET"> <button id = "delButt" type = "submit">X</button></form>
+                <p class ="commentText"><%=com.date.toLocaleString()%></p><br>
+                <p class ="commentText"><span class = "bold"><%=com.from%></span> said: <span class = "underline"><%=com.content%></span></p><br>
                 </div>
             <%})%>
             </div>

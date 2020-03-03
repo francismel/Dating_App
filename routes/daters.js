@@ -31,6 +31,7 @@ router.post('/profilePic',upload.single('profilePic'),(req,res,next) =>{
     currUser.save();
   });
 });
+router.get('/comment/delete/:id',datersCtrl.deleteComment);
 router.post('/comments',datersCtrl.postComment);
 
 
