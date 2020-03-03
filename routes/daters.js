@@ -1,13 +1,37 @@
 var router = require('express').Router();
+const Dater = require('../models/dater');
 var datersCtrl = require('../controllers/daters');
+const multer = require('multer');
+require('../config/passport');
+
+
+const storage = multer.diskStorage({
+  destination: function(req,file,cb){
+    cb(null,'./uploads/');
+  },
+  filename: function(req,file,cb){
+    cb(null,new Date().toISOString()+file.originalname)
+  }
+});
+
+const upload = multer({storage: storage});
 
 // GET /students
 router.get('/', datersCtrl.index);
 router.get('/new/Basics',datersCtrl.create)
+router.get('/home',datersCtrl.home);
 router.post('/new/Basics',datersCtrl.basics)
 router.get('/new/Lightning',datersCtrl.getLightning)
 router.post('/new/:id',datersCtrl.postLightningQuestions)
 router.get('/new/Personal',datersCtrl.personal)
+router.post('/profilePic',upload.single('profilePic'),(req,res,next) =>{
+
+  Dater.findById(req.user._id,function(error,currUser){
+   currUser.profilePic =req.file.path;
+    currUser.save();
+  });
+});
+router.post('/comments',datersCtrl.postComment);
 
 
 

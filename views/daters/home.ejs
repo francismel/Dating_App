@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <title>Document</title>
+</head>
+<body>
+
+
+
+        <div class="topnav">
+        <a href="#news">My Top Matches</a>
+        <a href="#contact">All Members</a>
+        <a href="#about">Messages</a>
+        <!-- <div class="search-container">
+            <form>
+              <input id = "searchBar" type="text" placeholder="Search.." name="search">
+              <button id = "searchButton" type="submit"></button>
+            </form>
+        </div> -->
+        <a id = "logout" class="active" href="#home">Logout</a>
+        </div>
+        
+        <div id = "personalInfo">
+            
+            <div id = "vertical">
+
+            <h2><%=currUser.name%>, <%=currUser.age%></h2>
+
+            <% let x = '../../' + currUser.profilePic %>
+                
+            <div id = "profile">
+                <img width = "300" height = "300" src ="<%= x %>" alt = "Your Profile Pic">
+            
+                <div id = "fastFacts">
+                    <ul>
+                        <li>Lives in: <%=currUser.location%></li>
+                        <% if(currUser.taylorSwift === 1){ %>
+                            <li>Team: Taylor Swift</li>
+                        <%}else if(currUser.taylorSwift === 2){%>
+                            <li>Team: Katy Perry</li>
+                        <%} else{ %>
+                            <li>Team: Doesn't Care</li>
+                        <%}%>  
+
+                        <li>Messyness: <%=currUser.messyness%></li>
+                        
+                        <% if(currUser.book === true){ %>
+                        <li>book or movie: book</li>
+                        <%}else{%>
+                            <li>book or movie: movie</li>
+                        <%}%> 
+
+                    </ul>
+                </div>
+            </div>
+            
+        
+            <button type="button" class="collapsible">See Bio</button>
+            <div class="content">
+                <p><%=currUser.bio%></p>
+            </div><br><br><br><br><br><br>
+
+        </div>
+        
+        <div id = "commentSection">
+            <h2 id = "saying">What People are Saying</h2>
+            <div id = "postedComments">
+                <%currUser.comments.forEach(com => {%>
+                <div class = "indComment">
+                <p class ="commentText"><%=com.date.toLocaleString()%></p>
+                <p class ="commentText"><%=com.from%> said: <%=com.content%></p><br>
+                </div>
+            <%})%>
+            </div>
+                
+            
+            <form action = "/daters/comments" method = "POST" id = "comments">
+                <label for="story">Leave a Comment:</label>
+                <textarea name = "comment" id = "text" maxlength="300" placeholder="Keep it PG-13" cols="58" rows="6"></textarea>
+                <button id = "send" type ="submit">Post</button>
+            </form>
+
+        </div>
+
+        </div>
+        
+        
+
+       
+
+    
+
+
+    
+</body>
+
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+</script>
+</body>
+
+
+</html>

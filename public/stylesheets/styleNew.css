@@ -2,7 +2,24 @@
     position: absolute;
     left: 15%;
 }
+#smallButton{
+    background-color: rgb(201, 201, 201);
+    border-radius: 2px;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    font-size: 14px;
+    border: 1px solid black;
+    display:none;
 
+}
+#smallButton:active{
+    opacity:0.6;
+}
+
+ul{
+    display:flex;
+    flex-direction:left;
+}
 a{
     font-size: 25px;
     color: rgb(39, 20, 126)
@@ -10,6 +27,12 @@ a{
 #continue{
     display:flex;
     flex-direction: left;
+}
+#specialDiv{
+    width: 200px;
+    height: 200px;
+    
+    border: 2px solid black;
 }
 
 a:hover{
@@ -52,6 +75,7 @@ body{
     text-align: center;
 }
 
+
 img{
     margin-left: 1em;
     margin-right: 1em;
@@ -65,6 +89,11 @@ img{
     border: 1px solid black;
 
 }
+
+input[type='file'] {
+    color: transparent;
+  }
+
 .butt:hover{
     font-size:26px;
     border: 2px solid black;
@@ -72,4 +101,5 @@ img{
 .butt:active{
     font-size:27px;
     border: 1px solid black;
+    opacity: 0.6;
 }

@@ -18,9 +18,6 @@ require('./config/database');
 // configure Passport
 require('./config/passport');
 
-// require our routes
-var indexRoutes = require('./routes/index');
-var datersRoutes = require('./routes/daters');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,7 +38,12 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use('/uploads',express.static('uploads'));
 
+
+// require our routes
+var indexRoutes = require('./routes/index');
+var datersRoutes = require('./routes/daters');
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);

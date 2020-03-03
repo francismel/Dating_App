@@ -21,13 +21,12 @@ passport.use(new GoogleStrategy({
           email: profile.emails[0].value,
           googleId: profile.id,
           bio:null,
+          registered: 0,
         });
         newDater.save(function(err) {
           if (err) return cb(err);
           return cb(null, newDater);
         });
-        return cb(null, dater);
-
       }
     });
   }

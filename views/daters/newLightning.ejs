@@ -17,7 +17,7 @@
     <h1 id = "time">Time for some Lightning Questions!</h1>
 
 
-    <h3 class = "questionHeader">How Introverted Are You?</h3>
+    <h3 class = "questionHeader">How Extroverted Are You?</h3>
 
     <div class = "scaleAxes">
     <p>Very Introverted</p>
@@ -26,16 +26,16 @@
 
 
 <div class = "left">
-    <form class="form" action="/daters/new/introvert" method="POST"><button class = "butt" name = "introvert" type ="submit" value = "1">1</button></form>
-    <form class="form" action="/daters/new/introvert" method="POST"><button class = "butt" name = "introvert" type ="submit" value = "2">2</button></form>
-    <form class="form" action="/daters/new/introvert" method="POST"><button class = "butt" name = "introvert" type ="submit" value = "3">3</button></form>
-    <form class="form" action="/daters/new/introvert" method="POST"><button  class = "butt" name = "introvert" type ="submit" value = "4">4</button></form>
-    <form class="form" action="/daters/new/introvert" method="POST"><button  class = "butt" name = "introvert" type ="submit" value = "5">5</button></form>
-    <form class="form" action="/daters/new/introvert" method="POST"><button  class = "butt"  name = "introvert" type ="submit" value = "6">6</button></form>
-    <form class="form" action="/daters/new/introvert" method="POST"><button class = "butt" name = "introvert" type ="submit" value = "7">7</button></form>
-    <form class="form" action="/daters/new/introvert" method="POST"><button  class = "butt" name = "introvert"  type ="submit" value = "8">8</button></form>
-    <form class="form" action="/daters/new/introvert" method="POST"><button  class = "butt" name = "introvert" type ="submit" value = "9">9</button></form>
-    <form class="form" action="/daters/new/introvert" method="POST"><button class = "butt" name = "introvert" type ="submit" value = "10">10</button></form>
+    <form class="form" action="/daters/new/extroverted" method="POST"><button class = "butt" name = "extroverted" type ="submit" value = "1">1</button></form>
+    <form class="form" action="/daters/new/extroverted" method="POST"><button class = "butt" name = "extroverted" type ="submit" value = "2">2</button></form>
+    <form class="form" action="/daters/new/extroverted" method="POST"><button class = "butt" name = "extroverted" type ="submit" value = "3">3</button></form>
+    <form class="form" action="/daters/new/extroverted" method="POST"><button  class = "butt" name = "extroverted" type ="submit" value = "4">4</button></form>
+    <form class="form" action="/daters/new/extroverted" method="POST"><button  class = "butt" name = "extroverted" type ="submit" value = "5">5</button></form>
+    <form class="form" action="/daters/new/extroverted" method="POST"><button  class = "butt"  name = "extroverted" type ="submit" value = "6">6</button></form>
+    <form class="form" action="/daters/new/extroverted" method="POST"><button class = "butt" name = "extroverted" type ="submit" value = "7">7</button></form>
+    <form class="form" action="/daters/new/extroverted" method="POST"><button  class = "butt" name = "extroverted"  type ="submit" value = "8">8</button></form>
+    <form class="form" action="/daters/new/extroverted" method="POST"><button  class = "butt" name = "extroverted" type ="submit" value = "9">9</button></form>
+    <form class="form" action="/daters/new/extroverted" method="POST"><button class = "butt" name = "extroverted" type ="submit" value = "10">10</button></form>
     <br><br><br>
 </div>
 
@@ -120,8 +120,19 @@
 
 
 
-    <//div>div>
+<script>
+    let buttons = document.getElementsByClassName('butt');
+    
+    for(let i = 0; i<buttons.length; i++){
+        buttons[i].addEventListener('click',function(){
+            
+            buttons[i].style.border = '5px solid black';        
+      
+        });
+    }
 
+    
+</script>
 
 
       
