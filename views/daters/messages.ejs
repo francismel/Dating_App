@@ -5,23 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
 </head>
 <body>
     <h1> messages baby</h1>
     <p><%=currUser.name%></p>
-    <p><%=otherUser%></p>
-
-    <% currUser.messages.forEach(mes =>{%>
-
-            <% if(mes.to === otherUser){%>
+    <p><%=otherUser.name%></p>
 
 
-                <div class = "indMessage">
-                    <p class ="commentText"><%=mes.date.toLocaleString()%></p><br>
-                    <p class ="commentText"><%=mes.from%></p><br>
-                </div>
+    <div id = "bigMessageDiv">
 
-            <%}%>
-    <%})%>
+    <%messagesToShow.forEach(mess => {%>
+
+        <%let whoSent;%>
+        <% let imgSrc;%> 
+                
+            
+
+        <% if(mess.to === otherUser.name){%>
+            <% whoSent = 'fromMe'%>
+            <% imgSrc =  '../../' + currUser.profilePic %>
+
+
+        <% }else{%>
+
+            <%  whoSent = 'toMe'%>
+            <% imgSrc =  '../../' + otherUser.profilePic %>
+
+        <%}%>
+
+            <div class = '<%=whoSent%>'></div>
+
+            <img class = "miniPhotos" src ="../../uploads/2020-03-02T23:47:23.986ZPhoto on 1-24-20 at 12.26 PM.jpg" width="150" height="100" > 
+           
+            <p class ="commentText"><%=mess.date.toLocaleString()%></p>
+            <p class ="commentText"><%=mess.content%></p>
+            <p class ="commentText"><%=whoSent%></p>
+            <p class ="commentText"><%=imgSrc%></p><br>
+            </div>
+        <%})%>
+
+
+    </div>
+                
+               
+
+        
+    
 </body>
 </html>

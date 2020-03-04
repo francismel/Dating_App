@@ -26,7 +26,14 @@ function showAllMessages(req,res,next){
 
   Dater.findById(req.user._id,function(error,currUser){
     Dater.findById(req.params.id,function(error,otherUser){
-      res.render('daters/messages',{currUser:currUser, otherUser: otherUser.name});
+      let messagesToShow = [];
+
+      currUser.messages.forEach(message =>{
+          if(message.to === otherUser.name || message.from === otherUser.name){
+            messagesToShow.push(message);
+          }
+      })
+      res.render('daters/messages',{ currUser: currUser, otherUser: otherUser, messagesToShow: messagesToShow});
     });
     
   });
