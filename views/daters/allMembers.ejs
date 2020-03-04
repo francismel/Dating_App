@@ -9,8 +9,23 @@
 
 </head>
 <body>
+
+    <div class="topnav">
+        <a href="#news">My Top Matches</a>
+        <a href = "/daters/home">Home Page</a>
+        <a href="#about">Messages</a>
+        <div class="search-container">
+            <form id = "searchForm">
+              <input id = "searchBar" type="text" size = "30" height="30"placeholder="Search By Name.." name="search">
+              <button id = "searchButton" type="submit"></button>
+            </form>
+        </div>
+        <a id = "logout" class="active" href="/logout">Logout</a>
+        
+        </div>
     
     <h1>All Members</h1>
+    
 
     <%allDaters.forEach(dater => {%>
 
