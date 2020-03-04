@@ -47,7 +47,6 @@ function showAllMessages(req,res,next){
 }
 
 
-
 function index(req, res, next) {
    let user = req.user;
   if(!user){
@@ -55,7 +54,7 @@ function index(req, res, next) {
   }else if(user.registered === 0){
     res.render('daters/newAccount',{user});
   }else{
-    res.render('daters/welcomeBack',{user});
+    res.redirect('/daters/home');
   }
 } 
 
@@ -128,10 +127,11 @@ function seeAllMembers(req,res,next){
 
   Dater.find({},function(error,allDaters){
 
-    let yourId = req.user.id;
-    res.render('daters/allMembers',{allDaters:allDaters,yourId: yourId})
-  });
-
+    Dater.findById(req.user.id,function(error,currUser){
+      let yourId = currUser._id;
+      res.render('daters/allMembers',{allDaters:allDaters,yourId: yourId, yourInterests: currUser.interestedIn, yourName:currUser.name})
+      });
+    })
 }
 
 
@@ -239,30 +239,38 @@ function profilePic(req,res,next){
 
 function home(req,res,next){
 
-  Dater.findById(req.user._id,function(error,currUser){
-
-    res.render('daters/home',{currUser});
+  Dater.find({},function(error,allDaters){
+    Dater.findById(req.user.id,function(error,currUser){
+      allDaters.forEach(currProspect =>{
+        compatibiltyCalculator(currUser,currProspect);
+      });
+      res.render('daters/home',{currUser});
+    })
   });
-  
 }
 
 function compatibiltyCalculator(currDater,currProspect){
-  
-  let ageDiff = Math.abs(currDater.age - currProspect.age);
-  let extrovertDiff = Math.abs(currDater.extroverted - currProspect.extroverted);
-  let musicIntersection = Math.min(3,array.intersection(currDater.musicalGenres,currProspect.musicalGenres).length);
-  let messDiff = Math.abs(currDater.messyness - currProspect.messyness);
-  let bookDiff = currDater.book === currProspect.book;
-  let locDiff = currDater.location === currProspect.location;
-  let tayDiff = currDater.taylorSwift === currProspect.taylorSwift;
 
-  
-  let compatibility = (250 - (250/60)*ageDiff) + (200 - (200/9)*extrovertDiff) + 
-      (Math.min(3,musicIntersection)*50) + (100 - (100/9)*messDiff) + 
+      let ageDiff = Math.abs(currDater.age - currProspect.age);
+      let extrovertDiff = Math.abs(currDater.extroverted - currProspect.extroverted);
+      let musicIntersection = Math.min(3,array.intersection(currDater.musicalGenres,currProspect.musicalGenres).length);
+      let messDiff = Math.abs(currDater.messyness - currProspect.messyness);
+      let bookDiff = currDater.book === currProspect.book;
+      let locDiff = currDater.location === currProspect.location;
+      let tayDiff = currDater.taylorSwift === currProspect.taylorSwift;
+
+      let compatibility = (250 - (250/60)*ageDiff) + (250 - (250/9)*extrovertDiff) + 
+      (Math.min(3,musicIntersection)*50) + (50 - (50/9)*messDiff) + 
       100*bookDiff + 100*locDiff + 100*tayDiff;
-  return compatibility/1000; 
- 
-}
+
+      let finalCompatibility = compatibility/1000; 
+
+      currProspect.compatibilityToCurrUser = finalCompatibility;
+      currProspect.save();
+  }
+  
+
+
 
 
 

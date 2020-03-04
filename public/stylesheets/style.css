@@ -6,8 +6,20 @@
   
 }
 
+#welcomePage{
+
+  text-align: center;
+}
 .brand-logo {
   margin-left: 15px;
+}
+
+.red{
+  color: rgb(219, 0, 0);
+}
+
+#loginLink{
+  font-size: 20px;
 }
 .lists{
   font-size: 20px;
@@ -115,11 +127,16 @@ body{
   
   border: 2px solid black;
   border-radius: 25px;
+  width: 400px;
+  
   
 }
 
 #vertical{
-  text-align: center;
+  text-align: left;
+  width:405px;
+  margin-right: 5px;
+  
 }
 #fastFacts{
   text-align:left;
@@ -129,12 +146,14 @@ body{
 #messageName{
   display:flex;
   flex-direction: left;
+
+  margin-left: 5%;
+  font-size: 24px;
+  font-weight: 550;
+  margin-bottom: 0px;
 }
 
-#messageName{
-  margin-left: 20%;
 
-}
 
 #stickyDown{
   display:none;
@@ -150,7 +169,6 @@ body{
   bottom: 0;
   left: 10%;
   width: 100%; 
-  text-align: center;
   width: 308px;
   height: 345px;
   border: 3px solid black;
@@ -187,7 +205,7 @@ body{
 #messageHeader{
   background-color: lightskyblue;
   text-align:center;
-  width: 285px;
+  width: 300px;
   height: 30px;
   border-radius: 15px;
   font-size: 20px;
@@ -198,6 +216,34 @@ body{
   font-size: 22px;
   outline:none;
 }
+
+#otherName{
+  display:  inline;
+}
+
+#puzzleButton{
+  margin-left: 0px;
+  margin-top: 18px;
+  background: url("../images/vector-puzzle-simple-solutions-compatibility-flat-color-line-icon-solving-problem-symbol-sign-illustration-design-isolated-152295645.jpg") no-repeat scroll 0 0 transparent;
+  background-size: 38px 38px;
+  background-position: center;
+  border-radius: 15px;
+  background-color: transparent;
+  padding: 18px 18px;
+  width: 50px;
+  border: none;
+}
+
+
+#puzzleButton:hover{
+  background-size: 40px 40px;
+  padding: 20px 20px;
+
+  cursor: pointer;
+  outline:none;
+}
+
+
 
 
 #messageForm{
@@ -220,16 +266,18 @@ body{
 }
 
 #messageButton{
-  margin-left: 12px;
+  margin-left: 15px;
   margin-top: 18px;
   background: url("../images/hiclipart.com.png") no-repeat scroll 0 0 transparent;
   background-size: 38px 38px;
   background-position: center;
   border-radius: 15px;
   background-color: transparent;
-  padding: 18px 18px;
+  padding: 18px 10px;
   width: 50px;
   border: none;
+  margin-right: 5px;
+
 
 }
 
@@ -265,6 +313,16 @@ body{
 }
 
 #secret:hover #tooltiptext{
+visibility: visible;
+}
+
+
+#hiddenPuzzle{
+  visibility: hidden;
+  font-weight: 400;
+}
+
+#puzzleDiv:hover #hiddenPuzzle{
 visibility: visible;
 }
 
@@ -410,7 +468,7 @@ textarea { font-size: 14px; }
 #logout{
   position: absolute;
   top:1%;
-  margin-left:61%;
+  margin-left:55%;
   display:inline-block;
   
 }

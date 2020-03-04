@@ -29,13 +29,21 @@
             <div id = "vertical">
 
                 <div id = "messageName">
-            <h2><%=personImStalking.name%>, <%=personImStalking.age%></h2>
-            <div class="message-container">
+            <p id = "otherName"><%=personImStalking.name%>, <%=personImStalking.age%></p>
+            
                 <div id = "secret">
                   <button id = "messageButton" type="button"></button>
-                  <span id = "tooltiptext">Send <%=personImStalking.name%> a message</span>
                 </div>
-            </div>
+            
+
+            
+                <div id = "puzzleDiv">
+                  <button id = "puzzleButton" type="button"></button>
+                  <span id = "hiddenPuzzle"><%=Math.floor(personImStalking.compatibilityToCurrUser*100)%>%</span>
+                </div>
+            
+
+
                 </div>
 
             <% let x = '../../' + personImStalking.profilePic %>

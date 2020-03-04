@@ -19,7 +19,7 @@ const daterSchema = new mongoose.Schema({
   age: Number,
   gender: {type:String,enum: ['Male','Female','Other']},
   googleId: String,
-  interestedIn: { type: [String], enum: ['Men','Women','Other']},
+  interestedIn: { type: [String], enum: ['Male','Female','Other']},
   location: { type: String, enum: ['DT Los Angeles','Denver','Santa Monica']},
   messyness: {type:Number, min: 1, max:10},
   extroverted: {type:Number, min: 1, max:10},
@@ -36,6 +36,7 @@ const daterSchema = new mongoose.Schema({
   messages: [messageSchema],
   profilePic: {type: String},
   registered: {type: Number, min:0, max:1},
+  compatibilityToCurrUser: {type: Number},
 
 },{
     timestamps: true
