@@ -19,7 +19,14 @@ module.exports = {
   setUpMessage,
   sendMessage,
   showAllMessages,
+  imageTest,
 };
+
+function imageTest(req,res,next){
+
+  res.render('daters/imageTest');
+
+}
 
 
 function showAllMessages(req,res,next){

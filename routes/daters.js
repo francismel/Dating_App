@@ -39,6 +39,7 @@ router.get('/loadPage/:id',datersCtrl.loadPage);
 router.get('/messages/:id',datersCtrl.setUpMessage);
 router.post('/messages/:id',datersCtrl.sendMessage);
 router.get('/show/messages/:id',datersCtrl.showAllMessages);
+router.get('/show/show',datersCtrl.imageTest);
 
 
 
