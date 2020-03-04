@@ -14,7 +14,7 @@
 
         <div class="topnav">
         <a href="#news">My Top Matches</a>
-        <a href="#contact">All Members</a>
+        <a href="/daters/allMembers">All Members</a>
         <a href="#about">Messages</a>
         <div class="search-container">
             <form id = "searchForm">
@@ -23,6 +23,7 @@
             </form>
         </div>
         <a id = "logout" class="active" href="#home">Logout</a>
+        </a>
         </div>
         
         <div id = "personalInfo">
@@ -34,7 +35,7 @@
             <% let x = '../../' + currUser.profilePic %>
                 
             <div id = "profile">
-                <img width = "300" height = "300" src ="<%= x %>" alt = "Your Profile Pic">
+                <img width = "400" height = "300" src ="<%= x %>" alt = "Your Profile Pic">
             
                 <div id = "fastFacts">
                     <ul>

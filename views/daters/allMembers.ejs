@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+</head>
+<body>
+    
+    <h1>All Members</h1>
+
+    <%allDaters.forEach(dater => {%>
+
+
+        <div class = "summary">
+            <div class = "summaryContent">
+                <% if(JSON.stringify(dater._id) === JSON.stringify(yourId)){%>
+                <a class = "profileLinks" href = "/daters/loadPage/<%=dater._id%>"><%=dater.name%>   <span class = "light">(You)</span></a>
+                <%}else{%>
+                <a class = "profileLinks" href = "/daters/loadPage/<%=dater._id%>"><%=dater.name%></a>
+                <%}%>
+            
+        <ul>
+            <li class = "lists"><%=dater.age%></li>
+            <li class = "lists"><%=dater.location%></li>
+
+            <% if(JSON.stringify(dater._id) != JSON.stringify(yourId)){%>
+
+            <li class = "lists"><a href = "/daters/show/messages/<%=dater._id%>">See Our Messages</a></li>
+
+            <%}%>
+        </ul>
+            </div>
+        <img class = "miniPhotos" width = "150" height = "100" src ="../../<%=dater.profilePic%>" alt = "No Photo On Record!">
+
+        </div>
+        <%})%>
+
+
+</body>
+</html>

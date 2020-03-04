@@ -9,7 +9,9 @@
 .brand-logo {
   margin-left: 15px;
 }
-
+.lists{
+  font-size: 20px;
+}
 .card .card-content .card-title {
   margin-bottom: 10px;
 }
@@ -67,7 +69,7 @@
 }
 
 
-label:hover{
+#leaveAComment:hover{
   font-size: 24px;
 }
 .indComment{
@@ -124,6 +126,150 @@ body{
   font-size: 22px;
 }
 
+#messageName{
+  display:flex;
+  flex-direction: left;
+}
+
+#messageName{
+  margin-left: 20%;
+
+}
+
+#stickyDown{
+  display:none;
+  padding-top: 10px;
+  padding-bottom: 3px;
+  padding-right: 8px;
+  padding-left:8px;
+  text-align: center;
+  border: 2px solid black;
+  background-color: #faf0e6;
+  border-radius: 25px;
+  position: fixed;
+  bottom: 0;
+  left: 10%;
+  width: 100%; 
+  text-align: center;
+  width: 308px;
+  height: 345px;
+  border: 3px solid black;
+}
+#closeMessage{
+  background-color: transparent;
+  border: 1px;
+  border-radius: 15px;
+  font-size: 18px;
+  position:absolute;
+  left:84%;
+}
+
+#closeMessage:hover{
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+#privateMessage{
+  margin-top: 5px;
+  resize: none;
+  font-size: 16px;
+  width: 280px;
+  height: 260px;
+}
+
+#privateMessage:focus{
+  border: 3px solid limegreen;
+
+}
+
+#messageHeader{
+  background-color: lightskyblue;
+  text-align:center;
+  width: 285px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+#privateMessageButton{
+  background-color: rgb(109, 238, 109);
+  border-radius: 14px;
+  font-size: 22px;
+  outline:none;
+}
+
+
+#messageForm{
+  display: inline-block; 
+  margin: 0 auto;
+}
+
+
+
+#privateMessageButton:hover{
+  font-size: 23px;
+  border: 1px solid black;
+  cursor: pointer;
+
+}
+
+#privateMessage{
+  border-radius: 15px;
+  outline:none
+}
+
+#messageButton{
+  margin-left: 12px;
+  margin-top: 18px;
+  background: url("../images/hiclipart.com.png") no-repeat scroll 0 0 transparent;
+  background-size: 38px 38px;
+  background-position: center;
+  border-radius: 15px;
+  background-color: transparent;
+  padding: 18px 18px;
+  width: 50px;
+  border: none;
+
+}
+
+
+
+
+#tooltiptext {
+  visibility: hidden;
+
+  color: rgb(0, 0, 0);
+  text-align: center;
+  opacity:0.6;
+  border-radius: 6px;
+  background-color: linen;
+  padding: 5px 0;
+  position: absolute;
+  top:0%;
+  left:25%;
+  font-size: 14px;
+  z-index: 1;
+}
+
+
+
+
+
+#messageButton:hover{
+  background-size: 40px 40px;
+  padding: 20px 20px;
+
+  cursor: pointer;
+  outline:none;
+}
+
+#secret:hover #tooltiptext{
+visibility: visible;
+}
+
+
+
 .collapsible {
   background-color: #777;
   color: white;
@@ -149,9 +295,47 @@ body{
 #personalInfo{
   position: absolute;
   top: 15%;
-  left:20%;
+  left:15%;
   display:flex;
   flex-direction:left;
+}
+
+.summary{
+  display:flex;
+  flex-direction:left;
+  background-color: #ddd;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+
+.miniPhotos{
+  margin-left: 20px;
+  border: 1px solid black;
+}
+.light{
+  opacity: 0.6;
+}
+
+.summaryContent{
+  margin-left: 10px;
+  
+}
+
+
+.miniPhotos:hover{
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.profileLinks{
+  color: rgb(41, 29, 204);
+  text-decoration:none;
+  font-size: 20px;
+}
+.profileLinks:hover{
+  font-size: 21px;
 }
 
 #saying{

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <title>Document</title>
+</head>
+<body>
+       
+
+        <div class="topnav">
+        <a href="#news">My Top Matches </a>
+        <a href="/daters/allMembers">All Members</a>
+        <a href="#about">Messages </a>
+        <div class="search-container">
+            <form id = "searchForm">
+              <input id = "searchBar" type="text" size = "30" height="30"placeholder="Search By Name.." name="search">
+              <button id = "searchButton" type="submit"></button>
+            </form>
+        </div>
+        <a id = "logout" class="active" href="#home">Logout</a>
+        </div>
+        
+        <div id = "personalInfo">
+            
+            <div id = "vertical">
+
+                <div id = "messageName">
+            <h2><%=personImStalking.name%>, <%=personImStalking.age%></h2>
+            <div class="message-container">
+                <div id = "secret">
+                  <button id = "messageButton" type="button"></button>
+                  <span id = "tooltiptext">Send <%=personImStalking.name%> a message</span>
+                </div>
+            </div>
+                </div>
+
+            <% let x = '../../' + personImStalking.profilePic %>
+                
+            <div id = "profile">
+                <img width = "400" height = "300" src ="<%= x %>" alt = "Your Profile Pic">
+            
+                <div id = "fastFacts">
+                    <ul>
+                        <li>Lives in: <%=personImStalking.location%></li>
+                        <% if(personImStalking.taylorSwift === 1){ %>
+                            <li>Team: Taylor Swift</li>
+                        <%}else if(personImStalking.taylorSwift === 2){%>
+                            <li>Team: Katy Perry</li>
+                        <%} else{ %>
+                            <li>Team: Doesn't Care</li>
+                        <%}%>  
+
+                        <li>Messyness: <%=personImStalking.messyness%></li>
+                        
+                        <% if(personImStalking.book === true){ %>
+                        <li>book or movie: book</li>
+                        <%}else{%>
+                            <li>book or movie: movie</li>
+                        <%}%> 
+
+                    </ul>
+                </div>
+            </div>
+            
+        
+            <button type="button" class="collapsible">See Bio</button>
+            <div class="content">
+                <p><%=personImStalking.bio%></p>
+            </div><br><br><br><br><br><br>
+
+        </div>
+        
+        <div id = "commentSection">
+            <h2 id = "saying">What People are Saying</h2>
+            <div id = "postedComments">
+
+                
+                <%personImStalking.comments.forEach(com => {%>
+
+
+                <div class = "indComment">
+                <p class ="commentText"><%=com.date.toLocaleString()%></p><br>
+                <p class ="commentText"><span class = "bold"><%=com.from%></span> said: <span class = "underline"><%=com.content%></span></p><br>
+                </div>
+            <%})%>
+            </div>
+                
+            
+            <form action = "/daters/comments/<%=personImStalking.id%>" method = "POST" id = "comments">
+                <label id = "leaveAComment" for="story">Leave a Comment:</label>
+                <textarea name = "comment" id = "text" maxlength="300" placeholder="Keep it PG-13" cols="58" rows="6"></textarea>
+                <button id = "send" type ="submit">Post</button>
+            </form>
+
+        </div>
+
+        </div>
+
+        <div id = "stickyDown" id = "messagePackage">
+            <button id = "closeMessage">X</button>
+            <form  method = "POST" action = "/daters/messages/<%=personImStalking._id%>" id = "messageForm">
+                <div id = "messageHeader">
+                <label for="messageHeader">To: <%=personImStalking.name%></label>
+                </div>
+
+                <textarea placeholder = "All messages are private!" id="privateMessage" name="content" rows="15" cols="50"></textarea><br>
+                <button type = "submit" id = "privateMessageButton">Send!</button>
+            </form>
+
+            <% if(messageSent){%>
+
+                <p>Message Sent</p>
+
+                let messageConsole = document.getElementById('stickyDown');
+                messageConsole.style.display = "block";
+
+
+            <%}%>
+          
+
+            <script>
+                let messageButton = document.getElementById('messageButton');
+                let messageConsole = document.getElementById('stickyDown');
+                let secretMessage = document.getElementById('tooltiptext');
+                let closeMessageButton = document.getElementById('closeMessage');
+                closeMessageButton.addEventListener('click',function(){
+                    messageConsole.style.display = "none";
+                })
+                messageButton.addEventListener('click',function(){
+                    if(messageConsole.style.display === "" || messageConsole.style.display === "none"){
+                        messageConsole.style.display = "block";
+                    }else{
+                        messageConsole.style.display = "none";
+                    }
+                    
+                });
+               
+            
+            </script>
+
+    </div>
+
+        
+        
+          
+</body>
+
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+</script>
+</body>
+
+
+</html>

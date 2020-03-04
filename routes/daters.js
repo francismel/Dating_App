@@ -32,7 +32,13 @@ router.post('/profilePic',upload.single('profilePic'),(req,res,next) =>{
   });
 });
 router.get('/comment/delete/:id',datersCtrl.deleteComment);
-router.post('/comments',datersCtrl.postComment);
+router.post('/comments',datersCtrl.postOwnComment);
+router.post('/comments/:id',datersCtrl.postOtherComment);
+router.get('/allMembers',datersCtrl.seeAllMembers);
+router.get('/loadPage/:id',datersCtrl.loadPage);
+router.get('/messages/:id',datersCtrl.setUpMessage);
+router.post('/messages/:id',datersCtrl.sendMessage);
+router.get('/show/messages/:id',datersCtrl.showAllMessages);
 
 
 

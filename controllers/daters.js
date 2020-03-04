@@ -10,10 +10,27 @@ module.exports = {
   postLightningQuestions,
   personal,
   basics,
-  postComment,
+  postOwnComment,
+  postOtherComment,
   home,
   deleteComment,
+  seeAllMembers,
+  loadPage,
+  setUpMessage,
+  sendMessage,
+  showAllMessages,
 };
+
+
+function showAllMessages(req,res,next){
+
+  Dater.findById(req.user._id,function(error,currUser){
+    Dater.findById(req.params.id,function(error,otherUser){
+      res.render('daters/messages',{currUser:currUser, otherUser: otherUser.name});
+    });
+    
+  });
+}
 
 
 
@@ -39,12 +56,72 @@ function basics(req,res,next){
     currUser.save();
   });
 
-
   res.redirect('/daters/new/Lightning')
 
 }
 
-function postComment(req,res,next){
+function loadPage(req,res,next){
+
+  if(req.params.id === req.user.id){
+    res.redirect('/daters/home');
+  }else{
+
+    Dater.findById(req.params.id,function(error,personImStalking){
+      Dater.findById(req.user.id,function(error,currUser){
+        res.render('daters/viewProfile',{personImStalking:personImStalking,userName: currUser.name, messageSent:0});
+      });
+    });
+
+  }
+
+}
+function sendMessage(req,res,next){
+
+
+  Dater.findById(req.user._id,function(error,messageSender){
+    console.log("the sender is ",messageSender.name);
+
+
+    Dater.findById(req.params.id,function(error, messageReciever){
+      console.log("the reciever is ",messageReciever.name);
+      console.log("the content is ",req.body.content);
+
+
+      let message = {
+        to: messageReciever.name,
+        from: messageSender.name,
+        content: req.body.content,
+        date: new Date(),
+      }
+      messageReciever.messages.push(message);
+      messageReciever.save();
+
+      messageSender.messages.push(message);
+      messageSender.save();
+      
+      res.render('daters/viewProfile',{personImStalking:messageReciever,userName: messageSender.name, messageSent: 1});
+      
+    })
+
+  });
+}
+
+function setUpMessage(req,res,next){
+  
+}
+
+function seeAllMembers(req,res,next){
+
+  Dater.find({},function(error,allDaters){
+
+    let yourId = req.user.id;
+    res.render('daters/allMembers',{allDaters:allDaters,yourId: yourId})
+  });
+
+}
+
+
+function postOwnComment(req,res,next){
 
   Dater.findById(req.user._id,function(error,poster){
     let posterName = poster.name;
@@ -55,7 +132,7 @@ function postComment(req,res,next){
       date: new Date(),
     }
 
-    Dater.findById(req.user._id,function(error,reciever){
+    Dater.findById(req.user.id,function(error,reciever){
       reciever.comments.push(commentInfo);
       reciever.save();
       console.log(posterName+" just pushed "+commentInfo.content+" to "+reciever.name);
@@ -65,8 +142,29 @@ function postComment(req,res,next){
   });
 }
 
-function deleteComment(req,res,next){
 
+function postOtherComment(req,res,next){
+
+  Dater.findById(req.user._id,function(error,poster){
+    let posterName = poster.name;
+
+    let commentInfo = {
+      content:req.body.comment,
+      from:posterName,
+      date: new Date(),
+    }
+
+    Dater.findById(req.params.id,function(error,reciever){
+      reciever.comments.push(commentInfo);
+      reciever.save();
+      console.log(posterName+" just pushed "+commentInfo.content+" to "+reciever.name);
+      res.render('daters/viewProfile',{personImStalking:reciever,userName: posterName, messageSent:0});
+    });
+
+  });
+}
+
+function deleteComment(req,res,next){
 
   console.log("this is the comment id 2 delete ",req.params.id);
   console.log("this is the id of the current user ",req.user.id);
@@ -80,9 +178,8 @@ function deleteComment(req,res,next){
 };
 
 
-    
 
-  
+
 
 function create(req,res,next){
 

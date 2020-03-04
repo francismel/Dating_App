@@ -6,6 +6,12 @@ const commentSchema = new mongoose.Schema({
   content: String,
   date: Date,
 })
+const messageSchema = new mongoose.Schema({
+  from: String,
+  to: String,
+  content: String,
+  date: Date,
+})
 
 const daterSchema = new mongoose.Schema({
   name: String,
@@ -27,7 +33,7 @@ const daterSchema = new mongoose.Schema({
     "Country", "Reggae", "Jazz", "Heavy Metal","Alternative"],
   },
   comments: [commentSchema],
-
+  messages: [messageSchema],
   profilePic: {type: String},
   registered: {type: Number, min:0, max:1},
 
