@@ -53,7 +53,7 @@ function index(req, res, next) {
   if(!user){
     res.render('daters/signInPage');
   }else if(user.registered === 0){
-    res.render('daters/signInPage',{user});
+    res.render('daters/newAccount',{user});
   }else{
     res.redirect('/daters/home');
   }
