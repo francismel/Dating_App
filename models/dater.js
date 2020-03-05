@@ -20,7 +20,7 @@ const daterSchema = new mongoose.Schema({
   gender: {type:String,enum: ['Male','Female','Other']},
   googleId: String,
   interestedIn: { type: [String], enum: ['Male','Female','Other']},
-  location: { type: String, enum: ['DT Los Angeles','Denver','Santa Monica']},
+  location: { type: String, enum: ['DT Los Angeles','Denver','Santa Monica','San Diego','Austin','Dallas']},
   messyness: {type:Number, min: 1, max:10},
   extroverted: {type:Number, min: 1, max:10},
   book:Boolean,

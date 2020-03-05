@@ -41,6 +41,7 @@ router.post('/messages/:id',datersCtrl.sendMessage);
 router.get('/show/messages/:id',datersCtrl.showAllMessages);
 router.get('/show/show',datersCtrl.imageTest);
 router.post('/messagesPage/:id',datersCtrl.messagePage);
+router.get('/new/BasicsEdit',datersCtrl.basicsEdit);
 
 
 

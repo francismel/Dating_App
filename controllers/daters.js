@@ -21,6 +21,7 @@ module.exports = {
   showAllMessages,
   imageTest,
   messagePage,
+  basicsEdit,
 };
 
 function imageTest(req,res,next){
@@ -227,9 +228,14 @@ function deleteComment(req,res,next){
 
 function create(req,res,next){
 
+  res.render('daters/newBasicsExperiment');
+}
 
-  res.render('daters/newBasicsExperiment')
 
+function basicsEdit(req,res,next){
+  console.log('basics edit');
+
+  res.render('daters/newBasicsEdit');
 }
 
 
@@ -296,7 +302,11 @@ function compatibiltyCalculator(currDater,currProspect){
       let finalCompatibility = compatibility/1000; 
 
       currProspect.compatibilityToCurrUser = finalCompatibility;
-      currProspect.save();
+      currProspect.save(function (err) {
+        if (err) console.log('saved');
+        
+      });
+      
   }
   
 

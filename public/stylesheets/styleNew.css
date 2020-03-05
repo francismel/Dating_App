@@ -3,17 +3,165 @@
     left: 15%;
 }
 #smallButton{
-    background-color: rgb(201, 201, 201);
-    border-radius: 2px;
+    background-color: rgb(196, 189, 189);
+    border-radius: 10px;
     margin-top: 0.6em;
     margin-bottom: 0.6em;
     font-size: 14px;
     border: 1px solid black;
     display:none;
+}
+
+.topnav a.active,#send {
+    font-size:16px;
+    border-radius:25px;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .topnav #logout{
+    position:absolute;
+    right: 0;
+    top:0;
+  }
+
+  .search-container, #searchForm{
+    width: 100px;
+    height: 20px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction:left;
+  }
+  #searchForm{
+    margin-top: 5%;
+    
+  }
+  
+  #searchBar{
+    margin-top: 2%;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-right: 10px;
+    outline:none;
+  
+  }
+  #searchBar:hover{
+    padding: 16px 11px;
+    cursor: auto;
+    
+  }
+
+
+.topnav,img {
+  border-radius:25px;
+  overflow: hidden;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+
+  #logout{
+      background-color: rgb(53, 204, 39);
+      color:black;
+      padding:15px;
+      text-decoration: none;
+
+  }
+
+  
+#searchButton{
+    background: url("../images/search.png") no-repeat scroll 0 0 transparent;
+    background-size: 25px 25px;
+    border-radius: 20px;
+    background-position: center;
+    background-color: white;
+    border: 1px solid black;
+    padding: 18px 18px;
+    width: 50px;
+  
+  }
+
+  #searchButton:hover{
+    padding: 19px 19px;
+    cursor: pointer;
+  }
+
+  #goback{
+    background-color: rgb(30, 179, 87);
+    border-radius: 10px;
+    color:black;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  .active, .collapsible:hover {
+    background-color: #555;
+  }
+  .search-container, #searchForm{
+    width: 100px;
+    height: 20px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction:left;
+  }
+  #searchBar:focus{
+    padding: 16px 11px;
+    border: 2px solid black;
+  
+  
+    cursor: pointer;
+    
+  }
+  
+  
+  input[type="text"]{ padding: 15px 10px; }
+  
+  .topnav a.active:hover,#send:hover {
+    font-size:18px;
+    cursor: pointer;
+  
+   
+  }
+
+  .topnav a {
+    float: left;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .topnav{
+    position:relative;
+  }
+  topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+
+#smallButton:hover{
+    font-size: 15px;
+    border: 2px solid black;
+    cursor: pointer;
 
 }
+
+#dropdown{
+    width: 100px;
+}
+#dropdown text{
+text-align: center;}
 #smallButton:active{
     opacity:0.6;
+}
+.style{
+    border-radius: 5px;
+}
+.snass{
+    font-size: 26px;
+    color: black;
+    font-style: italic;
+    font-weight: 800;
 }
 
 ul{
@@ -32,7 +180,8 @@ a{
     width: 200px;
     height: 200px;
     
-    border: 2px solid black;
+    border: 1px solid rgb(122, 114, 114);
+    border-radius: 10px;
 }
 
 a:hover{
@@ -56,8 +205,9 @@ a:hover{
     margin-top: 12px;
 }
 body{
-    background-color: rgb(236, 139, 139);
-}
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  
+  }
 
 #farmAnimal{
     position: absolute;
@@ -80,13 +230,25 @@ img{
     margin-left: 1em;
     margin-right: 1em;
 }
+.red{
+    color: rgb(187, 31, 31);
+    font-weight: 800px;
+    font-size: 22px;
+}
 
+.black{
+
+    color: rgb(0, 0, 0);
+    font-weight: 800px;
+    font-size: 22px;
+
+}
 .butt{
-    background-color: rgb(219, 63, 63);
-    border-radius: 4px;
-    margin-right: 0.6em;
-    font-size: 25px;
-    border: 1px solid black;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 5px;
+        margin-right: 0.6em;
+    font-size: 22px;
+    border: 2px solid black;
 
 }
 

@@ -15,6 +15,7 @@
         <div class="topnav">
         <a href="#news">My Top Matches</a>
         <a href="/daters/allMembers">All Members</a>
+        <a href="/daters/new/BasicsEdit">Update Info</a>
         <div class="search-container">
             <form id = "searchForm">
               <input id = "searchBar" type="text" size = "30" height="30"placeholder="Search By Name.." name="search">
@@ -34,7 +35,7 @@
             <% let x = '../../' + currUser.profilePic %>
                 
             <div id = "profile">
-                <img width = "400" height = "300" src ="<%= x %>" alt = "Your Profile Pic">
+                <img id ="mainPhoto" width = "360" height = "300" src ="<%= x %>" alt = "Your Profile Pic">
             
                 <div id = "fastFacts">
                     <ul>

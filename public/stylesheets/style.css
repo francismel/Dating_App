@@ -46,6 +46,8 @@
   border-radius: 25px;
   background-color: rgb(190, 44, 44);
 }
+
+
 #diagnostic2{
   color: black;
   font-size: 16px;
@@ -62,6 +64,14 @@
   font-size: 23px;
   border: 3px solid black;
   
+}
+
+.search-container, #searchForm{
+  width: 100px;
+  height: 20px;
+  margin: 0 auto;
+  display:flex;
+  flex-direction:left;
 }
 
 #searchButton{
@@ -160,6 +170,13 @@
   font-size: 17px;
 }
 
+.topnav a.active,#send {
+  font-size:16px;
+  border-radius:25px;
+  background-color: #4CAF50;
+  color: white;
+}
+
 .topnav a:hover {
   background-color: #ddd;
   color: black;
@@ -174,7 +191,7 @@ body{
   
   border: 2px solid black;
   border-radius: 25px;
-  width: 400px;
+  width: 360px;
   
   
 }
@@ -189,7 +206,7 @@ body{
 #vertical{
   text-align: left;
   width:405px;
-  margin-right: 5px;
+  margin-right: 0px;
   
 }
 #fastFacts{
@@ -387,22 +404,28 @@ visibility: visible;
   color: white;
   cursor: pointer;
   padding: 18px;
-  width: 100%;
+  width: 360px;
   border: none;
   text-align: left;
   outline: none;
   font-size: 15px;
 }
 
+#goback{
+color: rgb(196, 72, 72)}
+
 .active, .collapsible:hover {
   background-color: #555;
 }
 
 .content {
-  padding: 0 18px;
+  
+  padding: 0;
   display: none;
   overflow: hidden;
   background-color: #f1f1f1;
+  text-align: center;
+  width:360px;
 }
 #personalInfo{
   position: absolute;
@@ -486,12 +509,11 @@ margin-right: 0;
 .summary{
   display:flex;
   flex-direction:left;
-  background-color: #ddd;
-  border: 1px solid black;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   border-radius: 15px;
-  margin-top: 10px;
+  border: 1px solid gray;
+  margin-top: 5px;
 }
-
 
 .miniPhotos{
   margin-left: 20px;
@@ -513,7 +535,7 @@ margin-right: 0;
 }
 
 .profileLinks{
-  color: rgb(41, 29, 204);
+  color: rgb(62, 55, 163);
   text-decoration:none;
   font-size: 20px;
 }
@@ -526,7 +548,7 @@ margin-right: 0;
 }
 
 #commentSection{
-  margin-left: 3%;
+  margin-left: 0%;
   margin-top: 1%;
 }
 
@@ -537,25 +559,17 @@ margin-right: 0;
   margin: 0 auto;
   margin-top:0px;
   
-  
-  
 }
 
 #comments{
   text-align: center;
   font-size: 22px;
   margin-top: 3%;
-  margin-right: 20%;
+  margin-right: 21%;
 }
-.search-container, #searchForm{
-  width: 100px;
-  height: 20px;
-  margin: 0 auto;
-  display:flex;
-  flex-direction:left;
-}
+
 #searchForm{
-  margin-top: 5%;
+  margin-top: 8%;
   
 }
 
