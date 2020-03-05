@@ -24,12 +24,40 @@
         </div>
     
     <h1>All Members</h1>
-    
 
+
+    <div id="flexContainer">
+
+                    
+       
     <%allDaters.forEach(dater => {%>
 
 
-        <div class = "summary">
+        <div class = "profileRectangles">
+            <% if(JSON.stringify(dater._id) === JSON.stringify(yourId)){%>
+                <a class = "profileLinks" href = "/daters/loadPage/<%=dater._id%>"><%=dater.name.slice(0,dater.name.indexOf(' '))%><span class = "light">(You)</span></a>
+                <%}else{%>
+                <a class = "profileLinks" href = "/daters/loadPage/<%=dater._id%>"><%=dater.name.slice(0,dater.name.indexOf(' '))%></a>
+                <%}%>
+            <div id = "imgBorder">
+                <img  height = "150" width = " 150" src ="../../<%=dater.profilePic%>" alt = "No Photo On Record!">
+            </div><br>
+            <div id = "fastFactsBorder">
+              <div id = "profileFastFacts">
+                <ul>
+                    
+                    
+                  <li class = "lists">Age: <%=dater.age%></li>
+                  <li class = "lists">Location: <%=dater.location%></li>
+                  <li class = "lists"><a href = "/daters/show/messages/<%=dater._id%>">Our Messages</a></li>
+                  <li class = "lists">Compatibility: <span class = "bold"><%=Math.floor(dater.compatibilityToCurrUser*100) ;%>%</span></li>
+                </ul>
+            </div>
+            </div>
+          </div>
+
+
+        <!-- <div class = "summary">
             <div class = "summaryContent">
                 <% if(JSON.stringify(dater._id) === JSON.stringify(yourId)){%>
                 <a class = "profileLinks" href = "/daters/loadPage/<%=dater._id%>"><%=dater.name%>   <span class = "light">(You)</span></a>
@@ -52,9 +80,11 @@
         </ul>
             </div>
         <img class = "miniPhotos" width = "120" height = "100" src ="../../<%=dater.profilePic%>" alt = "No Photo On Record!">
-        </div>
+        </div> -->
         <%})%>
 
+
+    </div>
 
 </body>
 </html>

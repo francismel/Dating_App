@@ -22,7 +22,6 @@
               <button id = "searchButton" type="submit"></button>
             </form>
         </div>
-
         
 
         <a id = "logout" class="active" href="/logout">Logout</a>
@@ -41,21 +40,13 @@
 
 
         <div id = "bigMessageDiv">
-            <%if(messagesToShow.length === 0){%>
-
-                <p id = 'noMessages'>start the convo!</p>
-    
-            <%}%>
-                
-
-
 
     <%messagesToShow.forEach(mess => {%>
 
         <%let whoSent;%>
         <% let imgSrc;%> 
                 
-        
+            
 
         <% if(mess.to === otherUser.name){%>
             <% whoSent = 'fromMe'%>
