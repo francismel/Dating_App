@@ -23,7 +23,7 @@
         
         </div>
     
-    <h1>All Members</h1>
+    <h1 class = "centerMe">All Members</h1>
 
 
     <div id="flexContainer">
@@ -34,23 +34,28 @@
 
 
         <div class = "profileRectangles">
+            <br>
             <% if(JSON.stringify(dater._id) === JSON.stringify(yourId)){%>
                 <a class = "profileLinks" href = "/daters/loadPage/<%=dater._id%>"><%=dater.name.slice(0,dater.name.indexOf(' '))%><span class = "light">(You)</span></a>
                 <%}else{%>
                 <a class = "profileLinks" href = "/daters/loadPage/<%=dater._id%>"><%=dater.name.slice(0,dater.name.indexOf(' '))%></a>
-                <%}%>
+                <%}%><br><br>
             <div id = "imgBorder">
-                <img  height = "150" width = " 150" src ="../../<%=dater.profilePic%>" alt = "No Photo On Record!">
-            </div><br>
+                <% if(dater.profilePic.length === 0){%>
+                    <img  height = "150" width = " 150" src ="/uploads/21-213224_unknown-person-icon-png-download.png" alt = "No Photo On Record!">
+                <%}else{%>
+                    <img  height = "150" width = " 150" src ="../../<%=dater.profilePic%>" alt = "No Photo On Record!">
+                <%}%>
+            </div>
             <div id = "fastFactsBorder">
               <div id = "profileFastFacts">
                 <ul>
-                    
-                    
                   <li class = "lists">Age: <%=dater.age%></li>
                   <li class = "lists">Location: <%=dater.location%></li>
                   <li class = "lists"><a href = "/daters/show/messages/<%=dater._id%>">Our Messages</a></li>
-                  <li class = "lists">Compatibility: <span class = "bold"><%=Math.floor(dater.compatibilityToCurrUser*100) ;%>%</span></li>
+                  <% if(yourInterests.includes(dater.gender) && dater.name !== yourName){%>
+                    <li class = "lists">Compatibility: <span class = "bold"><%=Math.floor(dater.compatibilityToCurrUser*100) ;%>%</span></li>
+                    <%}%>
                 </ul>
             </div>
             </div>
@@ -69,8 +74,8 @@
             <li class = "lists"><%=dater.age%></li>
             <li class = "lists"><%=dater.location%></li>
 
-            <% if(yourInterests.includes(dater.gender) && dater.name !== yourName){%>
-            <li class = "lists">Compatibility: <span class = "bold"><%=Math.floor(dater.compatibilityToCurrUser*100) ;%>%</span></li>
+            <% if(dater.profilePic.length === 0){%>
+                <img  height = "150" width = " 150" src ="/uploads/21-213224_unknown-person-icon-png-download.png" alt = "No Photo On Record!">
             <%}%>
             <% if(JSON.stringify(dater._id) != JSON.stringify(yourId)){%>
 

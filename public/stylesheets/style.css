@@ -6,6 +6,12 @@
   
 }
 
+.centerMe{
+  margin-top: 3%;
+  margin-bottom: 3%;
+ text-align: center;
+}
+
 #welcomePage{
 
   text-align: center;
@@ -550,12 +556,12 @@ margin-right: 0;
 }
 
 .profileLinks{
-  color: rgb(62, 55, 163);
+  color: rgb(72, 60, 240);
   text-decoration:none;
-  font-size: 20px;
+  font-size: 26px;
 }
 .profileLinks:hover{
-  font-size: 21px;
+  font-size: 27px;
 }
 
 #saying{
@@ -699,10 +705,10 @@ text-align: right;
 
 
 
-
-
-
-
+#flexContainer{
+  position:absolute;
+  left:8%
+}
   
 #flexContainer{
   display:flex;
@@ -717,34 +723,34 @@ text-align: right;
 #fastFactsBorder{
   padding-top: 10px;
   border-radius: 10px;
-  border:2px solid black;
+  border:1px solid black;
 
-}
-
-
-
-#flexContainer .profileRectangles:hover{
-  background-image: linear-gradient(-20deg, #e93f0c 0%, #d46c27fd 100%);
-  cursor: pointer;
-  border: 3px solid rgb(0, 0, 0);
-  
 }
 
 #flexContainer .profileRectangles:nth-child(odd){
-  cursor: pointer;
-  border: 2px solid red;
+  border: 2px solid black;
+}
+#flexContainer .profileRectangles:nth-child(even){
+  border: 2px solid black;
+}
+
+#flexContainer .profileRectangles:hover{
+  border: 2px solid rgb(0, 196, 26);
 
 }
 
-
 .profileRectangles{
 
-  border: 2px solid rgb(0, 0, 0);
   width: 260px;
   border-radius: 12px;
   text-align:center;
   background-image: linear-gradient(-20deg, #c7c7c7 0%, #fffffffd 100%);
   margin: 30px;
 };
+
+
+
+
+
 
 

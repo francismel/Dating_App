@@ -34,7 +34,7 @@ const daterSchema = new mongoose.Schema({
   },
   comments: [commentSchema],
   messages: [messageSchema],
-  profilePic: {type: String},
+  profilePic: {type: String, default: ''},
   registered: {type: Number, min:0, max:1},
   compatibilityToCurrUser: {type: Number},
 
