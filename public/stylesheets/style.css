@@ -18,6 +18,11 @@
   color: rgb(219, 0, 0);
 }
 
+.redText{
+  color:rgb(204, 45, 45)
+}
+
+
 #loginLink{
   font-size: 20px;
 }
@@ -31,6 +36,34 @@
 #search-row form {
   padding-top: 20px;
 }
+
+#diagnostic{
+  
+  color: black;
+  font-size: 22px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: rgb(190, 44, 44);
+}
+#diagnostic2{
+  color: black;
+  font-size: 16px;
+  border: 1px solid black;
+  padding: 6px;
+  border-radius: 25px;
+  background-color: rgb(211, 92, 92);
+  opacity:0.9;
+}
+
+#diagnostic:hover{
+  
+  
+  font-size: 23px;
+  border: 3px solid black;
+  
+}
+
 #searchButton{
   background: url("../images/search.png") no-repeat scroll 0 0 transparent;
   background-size: 25px 25px;
@@ -145,7 +178,14 @@ body{
   
   
 }
+.middle{
+  text-align: center;
+}
 
+.little{
+  font-size: 10px;
+  opacity:0.6;
+}
 #vertical{
   text-align: left;
   width:405px;
