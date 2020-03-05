@@ -8,13 +8,35 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
 
 </head>
+
+
 <body>
-    <h1> messages baby</h1>
-    <p><%=currUser.name%></p>
-    <p><%=otherUser.name%></p>
+    
+    <div class="topnav">
+        <a href="#news">My Top Matches</a>
+        <a href = "/daters/home">Home Page</a>
+        <a href="#about">Messages</a>
+        <div class="search-container">
+            <form id = "searchForm">
+              <input id = "searchBar" type="text" size = "30" height="30"placeholder="Search By Name.." name="search">
+              <button id = "searchButton" type="submit"></button>
+            </form>
+        </div>
+        <a id = "logout" class="active" href="/logout">Logout</a>
+        
+        </div>
+    
+
+  
+    <div class = "messagePageInfo">
+    <h1> Messages </h1>
+   
+    </div>
+
+    <div id ="wholeMessage"> 
 
 
-    <div id = "bigMessageDiv">
+        <div id = "bigMessageDiv">
 
     <%messagesToShow.forEach(mess => {%>
 
@@ -34,20 +56,31 @@
             <% imgSrc =  '../../' + otherUser.profilePic %>
 
         <%}%>
-
-            <div class = '<%=whoSent%>'></div>
-
-            <img class = "miniPhotos" src ="../../uploads/2020-03-02T23:47:23.986ZPhoto on 1-24-20 at 12.26 PM.jpg" width="150" height="100"> 
+            <div  class = "wrapperDiv">
+            <div class = '<%=whoSent%>'>
            
-            <p class ="commentText"><%=mess.date.toLocaleString()%></p>
-            <p class ="commentText"><%=mess.content%></p>
-            <p class ="commentText"><%=whoSent%></p>
-            <p class ="commentText"><%=imgSrc%></p><br>
+            <p  id = "top" class ="alex"><span class = "weak"><%=mess.date.toLocaleString()%></span></p>
+            <p  id = "bottom" class ="alex"><%=mess.content%></p>
+      
             </div>
+        </div>
+
+           
         <%})%>
 
 
     </div>
+    <form method = "POST" action = "/daters/messagesPage/<%=otherUser._id%>" id = "lastForm">
+        <textarea name = "content" id = "text" maxlength="300" placeholder="Give them a piece of your mind..." cols="60" rows="8"></textarea><br>
+        <button id = "send" type ="submit">Send</button>
+    </form>
+
+
+</div>
+    <br>    <br>
+    <br>
+    <br>
+
                 
                
 

@@ -60,6 +60,18 @@
   font-weight: 800;
 }
 
+#top{
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+#bottom{
+  padding-top: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
 .commentText{
   margin: 0px 0px 0px 15px;
 
@@ -102,6 +114,8 @@
   overflow: hidden;
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
+
+
 
 
 .topnav a {
@@ -357,6 +371,77 @@ visibility: visible;
   display:flex;
   flex-direction:left;
 }
+.weak{
+  opacity:0.6;
+  font-size: 15px;
+}
+
+#bigMessageDiv{
+
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 25px;
+  width: 450px;
+  height: 500px;
+  background-color: silver;
+  overflow:auto;
+  margin-bottom:0px;
+
+}
+#sendMessageForm{
+  margin: 0 auto;
+}
+
+
+.messagePageInfo{
+  text-align: center;
+
+}
+
+.fromMe{
+  display:block;
+  width: fit-content; 
+  background-color: lightskyblue;
+  max-width:360px;
+  margin-bottom: 8px;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px solid black;
+
+}
+
+.alex { margin:2px; }
+
+.wrapperDiv{
+  width: 450px;
+  display:block;
+  position:relative;
+  
+}
+
+.wrapperDiv .fromMe{
+  margin-left: auto;
+margin-right: 0;
+  
+}
+
+
+.toMe{
+  display:block;
+  width: fit-content; 
+  max-width:360px;
+  margin-top: 0px;
+  padding: 0px;
+  display:block;
+  background-color:linen;
+  margin-bottom: 8px;
+  min-width: 80px;
+  max-width: 350px;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px solid black;
+
+}
 
 .summary{
   display:flex;
@@ -408,7 +493,13 @@ visibility: visible;
 #comments,label,input{
     display:block;
 }
-
+#lastForm{
+  margin: 0 auto;
+  margin-top:0px;
+  
+  
+  
+}
 
 #comments{
   text-align: center;
@@ -461,17 +552,11 @@ input[type="text"]{ padding: 15px 10px; }
 }
 #text:focus{
 
-border: 2px solid black;
+border: 3px solid limegreen;
 }
 textarea { font-size: 14px; }
 
-#logout{
-  position: absolute;
-  top:1%;
-  margin-left:55%;
-  display:inline-block;
-  
-}
+
 
 #delButt{
   background-color: #accbee;
@@ -492,23 +577,45 @@ textarea { font-size: 14px; }
 text-align: right;
 
 }
+#wholeMessage {
+
+  margin: 0 auto;
+  
+  border: 2px solid black;
+  width: 450px;
+  height: 700px;
+  border-radius: 25px;
+  background-color: rgb(134, 162, 190);
+}
+
+#wholeMessage #lastForm {
+  text-align: center;
+}
 
 #search-container{
   position:absolute;
   align-self: right;
 }
 .topnav a.active,#send {
-  font-size:20px;
+  font-size:16px;
   border-radius:25px;
   background-color: #4CAF50;
   color: white;
 }
 
 .topnav a.active:hover,#send:hover {
-  font-size:22px;
+  font-size:18px;
   cursor: pointer;
 
  
+}
+.topnav{
+  position:relative;
+}
+.topnav #logout{
+  position:absolute;
+  right: 0;
+  top:0;
 }
 #send{
   padding: 10px 20px;

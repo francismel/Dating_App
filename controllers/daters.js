@@ -20,6 +20,7 @@ module.exports = {
   sendMessage,
   showAllMessages,
   imageTest,
+  messagePage,
 };
 
 function imageTest(req,res,next){
@@ -90,15 +91,12 @@ function loadPage(req,res,next){
 }
 function sendMessage(req,res,next){
 
-
   Dater.findById(req.user._id,function(error,messageSender){
     console.log("the sender is ",messageSender.name);
-
 
     Dater.findById(req.params.id,function(error, messageReciever){
       console.log("the reciever is ",messageReciever.name);
       console.log("the content is ",req.body.content);
-
 
       let message = {
         to: messageReciever.name,
@@ -118,6 +116,38 @@ function sendMessage(req,res,next){
 
   });
 }
+
+
+
+
+function messagePage(req,res,next){
+
+  Dater.findById(req.user._id,function(error,messageSender){
+    console.log("Page user is",messageSender.name);
+
+    Dater.findById(req.params.id,function(error, messageReciever){
+      console.log("the page reciever is ",messageReciever.name);
+      console.log("the page content is ",req.body.content);
+
+      let message = {
+        to: messageReciever.name,
+        from: messageSender.name,
+        content: req.body.content,
+        date: new Date(),
+      }
+      messageReciever.messages.push(message);
+      messageReciever.save();
+
+      messageSender.messages.push(message);
+      messageSender.save();
+      
+      res.redirect('/daters/show/messages/'+req.params.id);
+      
+    })
+
+  });
+}
+
 
 function setUpMessage(req,res,next){
   
