@@ -5,12 +5,22 @@
 #smallButton{
     background-color: rgb(196, 189, 189);
     border-radius: 10px;
-    margin-top: 0.6em;
-    margin-bottom: 0.6em;
-    font-size: 14px;
-    border: 1px solid black;
+    font-size: 16px;
+    border: 3px solid black;
     display:none;
+    height: 40px;
+    margin-left: 30px;
+    margin-top: 30px;
 }
+
+#specialImage{
+  
+  margin-left: 0px;
+  height: 100%;
+  width: auto;
+}
+
+
 
 .topnav a.active,#send {
     font-size:16px;
@@ -20,6 +30,7 @@
   }
 
   .topnav #logout{
+    
     position:absolute;
     right: 0;
     top:0;
@@ -51,7 +62,9 @@
     
   }
 
-
+#homeA{
+  margin-left:15px;
+}
 .topnav,img {
   border-radius:25px;
   overflow: hidden;
@@ -63,6 +76,7 @@
       background-color: rgb(53, 204, 39);
       color:black;
       padding:15px;
+      border-radius: 25px;
       text-decoration: none;
 
   }
@@ -116,7 +130,7 @@
   input[type="text"]{ padding: 15px 10px; }
   
   .topnav a.active:hover,#send:hover {
-    font-size:18px;
+    font-size:14px;
     cursor: pointer;
   
    
@@ -126,25 +140,30 @@
     float: left;
     color:black;
     text-align: center;
-    padding: 14px 16px;
+    height: 25px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+
     text-decoration: none;
     font-size: 17px;
   }
   .topnav{
     position:relative;
   }
-  topnav a:hover {
+
+  .topnav a:hover {
     background-color: #ddd;
     color: black;
   }
   
 
 #smallButton:hover{
-    font-size: 15px;
+    font-size: 17px;
     border: 2px solid black;
     cursor: pointer;
 
 }
+
 
 #dropdown{
     width: 100px;
@@ -156,6 +175,7 @@ text-align: center;}
 }
 .style{
     border-radius: 5px;
+    font-size: 20px;
 }
 .snass{
     font-size: 26px;
@@ -179,13 +199,18 @@ a{
 #specialDiv{
     width: 200px;
     height: 200px;
-    
     border: 1px solid rgb(122, 114, 114);
     border-radius: 10px;
+    text-align: center;
+   
+}
+.flexLeft{
+  display: flex;
+  flex-direction: left;
 }
 
 a:hover{
-    font-size: 28px;
+    font-size: 20px;
 
 }
 

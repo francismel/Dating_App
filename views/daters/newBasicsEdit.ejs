@@ -14,35 +14,37 @@
 <body>
 
     <div class="topnav">
-        <a href="#news">My Top Matches</a>
-        <a href = "/daters/home">Home Page</a>
+        <a class = "navs" id = "homeA" href = "/daters/home">Home Page</a>
         <div class="search-container">
             <form id = "searchForm">
               <input id = "searchBar" type="text" size = "30" height="30"placeholder="Search By Name.." name="search">
               <button id = "searchButton" type="submit"></button>
             </form>
     </div>
-        <a id = "logout" href="/logout">Logout</a>
+        <a class = "navs" id = "logout" href="/logout">Logout</a>
         
     </div>
 
-       
+    
             
     
-    <h1>The Basics...</h1>
+    <h1>The Basics...</h1><br>
     
         <form class="form" enctype="multipart/form-data" action="/daters/profilePic" method="POST">
         
         <label>Upload Profile Picture:</label><br><br>
         <input type="file" id="profilePic" name="profilePic" accept="image/*"><br><br>
 
-        <div id = "specialDiv" class = "imagePreview">
+        <div class = "flexLeft">
+        <div id = "specialDiv">
        
-            <img id = "specialImage" width = "100" height = "100" src = "" alt = "Image Preview">
-            <button id = "smallButton" type ="submit" >Submit Profile Pic!</button>
+            <img id = "specialImage" src = "" >
 
         </div>
-        <br><br><br>
+        <button id = "smallButton" type ="submit" >Submit Profile Pic!</button>
+
+        </div>
+        <br><br><br><br><br>
 
         <script>
             const inputFile = document.getElementById('profilePic');
@@ -79,7 +81,7 @@
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
-            </select> <br><br>
+            </select> <br><br><br>
             </div>
            
             <br><br>
