@@ -164,7 +164,7 @@
 .collection-item form {
   margin-top: -5px;
 }
-.topnav,img {
+.topnav {
   border-radius:25px;
   overflow: hidden;
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
@@ -173,11 +173,10 @@
 #imgBorder{
   margin: auto;
   margin-bottom:20px;
-  border: 1px solid linen;
-  background-color: rgb(0, 0, 0);
+  border: 1px solid limegreen;
+  background-color: rgb(204, 196, 196);
   border-radius: 6px;
   height:150px;
-  width: 150px;
 }
 
 
@@ -208,14 +207,52 @@ body{
 
 }
 
-#profile{
+
+.mainPhoto{
+  margin-left:auto;
+  margin-right :auto;
+  height: 100%;
+  width:auto;
+  max-width: 360px;
+  border-radius: 25px;
+}
+
+.profile{
   
   border: 2px solid black;
-  border-radius: 25px;
+  border-radius: 29px;
   width: 360px;
-  
+  height:520px;
+  background-color: lightgrey;
   
 }
+
+.justImg{
+  width: 360px;
+  height:360px;
+  text-align: center;
+  background-color: black;
+  border-radius: 25px;
+  border: 2px solid limegreen;
+
+}
+.line{
+  width: 100%;
+  height: 2px;
+  background-color: limegreen;
+}
+
+.justImg2{
+  width: 360px;
+  height:360px;
+  text-align: center;
+  background-color: lightslategray;
+  border-radius: 25px;
+  border: 2px solid limegreen;
+
+}
+
+
 .middle{
   text-align: center;
 }
@@ -224,16 +261,36 @@ body{
   font-size: 10px;
   opacity:0.6;
 }
-#vertical{
-  text-align: left;
-  width:405px;
-  margin-right: 0px;
+
+
+.wholeEnchilada{
+  margin-top:50px;
+  width:100%;
+  height: 700px;
+
+  display:flex;
+  flex-direction: left;
   
+  
+  
+  
+
+  background-color: linen;
 }
-#fastFacts{
+.vertical{
+ 
+  text-align: left;
+  margin-left: 170px;
+  width:405px;
+
+}
+.fastFacts{
   text-align:left;
   font-size: 22px;
+  border-radius: 25px;
+  
 }
+
 
 #messageName{
   display:flex;
@@ -426,7 +483,6 @@ visibility: visible;
   cursor: pointer;
   padding: 18px;
   width: 360px;
-  border: none;
   text-align: left;
   outline: none;
   font-size: 15px;
@@ -444,6 +500,7 @@ color: rgb(196, 72, 72)}
   padding: 0;
   display: none;
   overflow: hidden;
+  border: 2px solid black;
   background-color: #f1f1f1;
   text-align: center;
   width:360px;
@@ -568,10 +625,7 @@ margin-right: 0;
   margin-left: 17%;
 }
 
-#commentSection{
-  margin-left: 0%;
-  margin-top: 1%;
-}
+
 
 #comments,label,input{
     display:block;

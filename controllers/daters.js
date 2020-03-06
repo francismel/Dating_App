@@ -1,6 +1,7 @@
 var array = require('lodash/array');
 var object = require('lodash/fp/object');
 const Dater = require('../models/dater');
+const fs = require('fs');
 
 
 module.exports = {
@@ -29,6 +30,7 @@ function imageTest(req,res,next){
   res.render('daters/imageTest');
 
 }
+
 
 
 function showAllMessages(req,res,next){
@@ -156,8 +158,16 @@ function setUpMessage(req,res,next){
 
 function seeAllMembers(req,res,next){
 
+
+
   Dater.find({},function(error,allDaters){
 
+    // allDaters.forEach(dater =>{
+    //   if(dater.profilePic === '21-213224_unknown-person-icon-png-download.png'){
+    //     dater.profilePic = 'uploads/21-213224_unknown-person-icon-png-download.png';
+    //     dater.save();
+    //   }
+    // })
     Dater.findById(req.user.id,function(error,currUser){
       let yourId = currUser._id;
       res.render('daters/allMembers',{allDaters:allDaters,yourId: yourId, yourInterests: currUser.interestedIn, yourName:currUser.name})

@@ -36,16 +36,15 @@
         <div class = "profileRectangles">
             <br>
             <% if(JSON.stringify(dater._id) === JSON.stringify(yourId)){%>
-                <a class = "profileLinks" href = "/daters/loadPage/<%=dater._id%>"><%=dater.name.slice(0,dater.name.indexOf(' '))%><span class = "light">(You)</span></a>
+                <a class = "profileLinks" href = "/daters/loadPage/<%=dater._id%>"><%=dater.name.slice(0,dater.name.indexOf(' '))%><span class = "light"> (You)</span></a>
                 <%}else{%>
                 <a class = "profileLinks" href = "/daters/loadPage/<%=dater._id%>"><%=dater.name.slice(0,dater.name.indexOf(' '))%></a>
                 <%}%><br><br>
             <div id = "imgBorder">
-                <% if(dater.profilePic.length === 0){%>
-                    <img  height = "150" width = " 150" src ="/uploads/21-213224_unknown-person-icon-png-download.png" alt = "No Photo On Record!">
-                <%}else{%>
-                    <img  height = "150" width = " 150" src ="../../<%=dater.profilePic%>" alt = "No Photo On Record!">
-                <%}%>
+                
+                
+                    <img class = "mainPhoto" src ="../../<%=dater.profilePic%>" alt = "No Photo On Record!">
+                
             </div>
             <div id = "fastFactsBorder">
               <div id = "profileFastFacts">
@@ -62,34 +61,12 @@
           </div>
 
 
-        <!-- <div class = "summary">
-            <div class = "summaryContent">
-                <% if(JSON.stringify(dater._id) === JSON.stringify(yourId)){%>
-                <a class = "profileLinks" href = "/daters/loadPage/<%=dater._id%>"><%=dater.name%>   <span class = "light">(You)</span></a>
-                <%}else{%>
-                <a class = "profileLinks" href = "/daters/loadPage/<%=dater._id%>"><%=dater.name%></a>
-                <%}%>
-            
-        <ul>
-            <li class = "lists"><%=dater.age%></li>
-            <li class = "lists"><%=dater.location%></li>
-
-            <% if(dater.profilePic.length === 0){%>
-                <img  height = "150" width = " 150" src ="/uploads/21-213224_unknown-person-icon-png-download.png" alt = "No Photo On Record!">
-            <%}%>
-            <% if(JSON.stringify(dater._id) != JSON.stringify(yourId)){%>
-
-            <li class = "lists"><a href = "/daters/show/messages/<%=dater._id%>">See Our Messages</a></li>
-
-            <%}%>
-        </ul>
-            </div>
-        <img class = "miniPhotos" width = "120" height = "100" src ="../../<%=dater.profilePic%>" alt = "No Photo On Record!">
-        </div> -->
         <%})%>
 
 
     </div>
+
+
 
 </body>
 </html>

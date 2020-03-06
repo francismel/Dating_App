@@ -10,7 +10,8 @@
 </head>
 <body>
 
-
+    <br>
+    <br>
 
         <div class="topnav">
         <a href="#news">My Top Matches</a>
@@ -26,18 +27,20 @@
         
         </div>
         
-        <div id = "personalInfo">
+        <div class = "wholeEnchilada">
             
-            <div id = "vertical">
+            <div class = "vertical">
 
             <h2><%=currUser.name%>, <%=currUser.age%></h2>
 
             <% let x = '../../' + currUser.profilePic %>
                 
-            <div id = "profile">
-                <img id ="mainPhoto" width = "360" height = "300" src ="<%= x %>" alt = "Your Profile Pic">
-            
-                <div id = "fastFacts">
+            <div class = "profile">
+                <div class = "justImg">
+                    <img class ="mainPhoto" src ="<%= x %>" alt = "Your Profile Pic">
+                </div>
+                <div class = 'line'></div>
+                <div class = "fastFacts">
                     <ul>
                         <li>Lives in: <%=currUser.location%></li>
                         <% if(currUser.taylorSwift === 1){ %>
@@ -58,17 +61,19 @@
 
                     </ul>
                 </div>
-            </div>
             
-        
+            
+            </div>
+
             <button type="button" class="collapsible">See Bio</button>
             <div class="content">
                 <p><%=currUser.bio%></p>
             </div><br><br><br><br><br><br>
 
-        </div>
         
-        <div id = "commentSection">
+    </div>
+        
+        <div class = "commentSection">
             <h2 id = "saying">What People are Saying</h2>
             <div id = "postedComments">
 
@@ -87,19 +92,20 @@
             
             <form action = "/daters/comments" method = "POST" id = "comments">
                 <label for="story">Leave a Comment:</label>
-                <textarea name = "comment" id = "text" maxlength="300" placeholder="Keep it PG-13" cols="58" rows="6"></textarea>
+                <textarea name = "comment" id = "text" maxlength="300" placeholder="Keep it PG-13" cols="58" rows="7"></textarea>
                 <button id = "send" type ="submit">Post</button>
             </form>
 
         </div>
 
         </div>
+        <br>        <br>
+        <br>
+        <br>
+
+
         
         
-
-       
-
-    
 
 
     

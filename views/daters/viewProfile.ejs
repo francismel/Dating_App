@@ -12,7 +12,7 @@
        
 
         <div class="topnav">
-        <a href="#news">My Top Matches </a>
+        <a href = "/daters/home">Home Page</a>
         <a href="/daters/allMembers">All Members</a>
         <div class="search-container">
             <form id = "searchForm">
@@ -22,35 +22,40 @@
         </div>
         <a id = "logout" class="active" href="/logout">Logout</a>
         </div>
-        
-        <div id = "personalInfo">
-            
-            <div id = "vertical">
 
-                <div id = "messageName">
-            <p id = "otherName"><%=personImStalking.name%>, <%=personImStalking.age%></p>
+
+
+
+
+
+        <div class = "wholeEnchilada">
+
+
+        <div class = "vertical">
+            
+
+            <div id = "messageName">
+                <p id = "otherName"><%=personImStalking.name%>, <%=personImStalking.age%></p>
             
                 <div id = "secret">
                   <button id = "messageButton" type="button"></button>
                 </div>
             
 
-            
                 <div id = "puzzleDiv">
                   <button id = "puzzleButton" type="button"></button>
                   <span id = "hiddenPuzzle"><%=Math.floor(personImStalking.compatibilityToCurrUser*100)%>%</span>
                 </div>
             
-
-
                 </div>
 
             <% let x = '../../' + personImStalking.profilePic %>
                 
-            <div id = "profile">
-                <img width = "400" height = "300" src ="<%= x %>" alt = "Your Profile Pic">
-            
-                <div id = "fastFacts">
+            <div class = "profile">
+                <div class = "justImg2">
+                <img class ="mainPhoto" src ="<%= x %>" alt = "profile pic">
+            </div>
+                <div class = "fastFacts">
                     <ul>
                         <li>Lives in: <%=personImStalking.location%></li>
                         <% if(personImStalking.taylorSwift === 1){ %>
@@ -81,7 +86,7 @@
 
         </div>
         
-        <div id = "commentSection">
+        <div class = "commentSection">
             <h2 id = "saying">What People are Saying</h2>
             <div id = "postedComments">
 
@@ -105,7 +110,12 @@
 
         </div>
 
+
+
         </div>
+
+
+
 
         <div id = "stickyDown" id = "messagePackage">
             <button id = "closeMessage">X</button>
