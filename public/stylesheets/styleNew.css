@@ -175,8 +175,11 @@ text-align: center;}
 }
 .style{
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 10px;
+    height: 1px;
+    width: 150px;
 }
+
 .snass{
     font-size: 26px;
     color: black;

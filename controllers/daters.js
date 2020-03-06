@@ -70,6 +70,7 @@ function basics(req,res,next){
     currUser.gender = req.body.gender;
     currUser.age = req.body.age;
     currUser.registered = 1;
+    currUser.profilePic = req.body.profilePic;
     currUser.save();
   });
 
@@ -162,12 +163,12 @@ function seeAllMembers(req,res,next){
 
   Dater.find({},function(error,allDaters){
 
-    // allDaters.forEach(dater =>{
-    //   if(dater.profilePic === '21-213224_unknown-person-icon-png-download.png'){
-    //     dater.profilePic = 'uploads/21-213224_unknown-person-icon-png-download.png';
-    //     dater.save();
-    //   }
-    // })
+    allDaters.forEach(dater =>{
+      if(dater.profilePic.includes('uploads')){
+        dater.profilePic = 'https://i.imgur.com/9Awnvvh.png';
+        dater.save();
+      }
+    })
     Dater.findById(req.user.id,function(error,currUser){
       let yourId = currUser._id;
       res.render('daters/allMembers',{allDaters:allDaters,yourId: yourId, yourInterests: currUser.interestedIn, yourName:currUser.name})

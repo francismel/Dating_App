@@ -33,11 +33,11 @@
 
             <h2><%=currUser.name%>, <%=currUser.age%></h2>
 
-            <% let x = '../../' + currUser.profilePic %>
+            
                 
             <div class = "profile">
                 <div class = "justImg">
-                    <img class ="mainPhoto" src ="<%= x %>" alt = "Your Profile Pic">
+                    <img class ="mainPhoto" src ="<%=currUser.profilePic%>" alt = "Your Profile Pic">
                 </div>
                 <div class = 'line'></div>
                 <div class = "fastFacts">

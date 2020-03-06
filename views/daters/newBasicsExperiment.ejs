@@ -17,53 +17,18 @@
             
     
     <h1>The Basics...</h1><br>
-    
-        <form class="form" enctype="multipart/form-data" action="/daters/profilePic" method="POST">
+
         
-        <label>Upload Profile Picture:</label><br><br>
-        <input type="file" id="profilePic" name="profilePic" accept="image/*"><br><br>
-
-        <div class = "flexLeft">
-        <div id = "specialDiv">
-       
-            <img id = "specialImage" src = "" >
-
-        </div>
-        <button id = "smallButton" type ="submit" >Submit Profile Pic!</button>
-
-        </div>
-        <br><br><br><br><br>
-
-        <script>
-            const inputFile = document.getElementById('profilePic');
-            const previewDiv = document.getElementById('specialDiv');
-            const previewImage = document.getElementById('specialImage');
-            const button = document.getElementById('smallButton');
-            
-            inputFile.addEventListener('change',function(){
-                const file = this.files[0];
-                if(file){
-                    const reader = new FileReader();
-                    reader.addEventListener('load',function(){
-                        previewImage.setAttribute('src',this.result);
-                    })
-                    reader.readAsDataURL(file);
-                    button.style.display = "inline";
-
-                }
-            })
-            button.addEventListener('click',function(){
-                button.style.display = 'none';
-            })
-           
-        </script>
-
-        </form>
+    
 
         <form class="form" action="/daters/new/Basics" autocomplete="off" method="POST">
 
-            <div class = "custom-select">
-              
+            
+
+            <label><span class = "snass">Upload Profile Picture:</span></label>
+            <input  required type="text" name="profilePic" class = "style"> <br><br><br><br>
+
+
             <label><span class = "snass">Gender:   </span></label>
             <select name="gender" id = "dropdown" class = "inputs" required>
                 <option value="Male">Male</option>
